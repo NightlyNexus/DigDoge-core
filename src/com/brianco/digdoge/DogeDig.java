@@ -1,6 +1,7 @@
 package com.brianco.digdoge;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL10;
@@ -178,10 +179,28 @@ public class DogeDig implements Screen, GestureListener {
 	            }
 			}
 			touch0 = true;
+		} else if (Gdx.input.isKeyPressed(Keys.DPAD_LEFT)) {
+			System.out.println("left");
+			if (!touch0) {
+				moveLeft();
+			}
+			touch0 = true;
+		} else if (Gdx.input.isKeyPressed(Keys.DPAD_RIGHT)) {
+			System.out.println("right");
+			if (!touch0) {
+				moveRight();
+			}
+			touch0 = true;
+		} else if (Gdx.input.isKeyPressed(Keys.DPAD_DOWN)) {
+			System.out.println("down");
+			if (!touch0) {
+				moveDown();
+			}
+			touch0 = true;
 		} else {
 			touch0 = false;
 		}
-		
+
 		if (Gdx.input.isTouched(1)){
 			if (!touch1) {
 				float x = Gdx.input.getX(1);

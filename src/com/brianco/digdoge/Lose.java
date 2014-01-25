@@ -3,6 +3,7 @@ package com.brianco.digdoge;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -119,7 +120,7 @@ public class Lose implements Screen {
 		}
 		game.batch.end();
 
-		if (Gdx.input.isTouched() && displayTap) {
+		if ((Gdx.input.isTouched() || Gdx.input.isKeyPressed(Keys.DPAD_DOWN)) && displayTap) {
 			game.setScreen(new DogeDig(game));
 			dispose();
 		}
