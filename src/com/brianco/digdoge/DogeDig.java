@@ -264,7 +264,7 @@ public class DogeDig implements Screen, GestureListener {
 			rt = new RandomText(SCREEN_WIDTH, SCREEN_HEIGHT);
 			lastSillyDrawn = 0;
 		}
-		if (rt != null && !rt.text.isEmpty()) {
+		if (rt != null && rt.text.length() > 0) {
 			game.font.scale(rt.scaleSize);
 			game.font.setColor(rt.r, rt.g, rt.b, rt.alpha);
 			game.font.draw(game.batch, rt.text,
