@@ -91,7 +91,7 @@ public class MainMenuScreen implements Screen {
 				SCREEN_WIDTH / 2f - 150, SCREEN_HEIGHT * 2f / 3f - 150);
 		game.batch.end();
 
-		if (Gdx.input.isTouched() || Gdx.input.isKeyPressed(Keys.DPAD_DOWN)) {
+		if (isPushed()) {
 			game.setScreen(new DogeDig(game));
 			dispose();
 		}
@@ -131,5 +131,14 @@ public class MainMenuScreen implements Screen {
 	public void dispose() {
 		// TODO Auto-generated method stub
 		background.dispose();
+	}
+
+	private static boolean isPushed() {
+		return Gdx.input.isTouched()
+				|| Gdx.input.isKeyPressed(Keys.DPAD_DOWN)
+				|| Gdx.input.isKeyPressed(Keys.DPAD_UP)
+				|| Gdx.input.isKeyPressed(Keys.DPAD_LEFT)
+				|| Gdx.input.isKeyPressed(Keys.DPAD_RIGHT)
+				|| Gdx.input.isKeyPressed(Keys.DPAD_CENTER);
 	}
 }

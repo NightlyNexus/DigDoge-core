@@ -180,19 +180,16 @@ public class DogeDig implements Screen, GestureListener {
 			}
 			touch0 = true;
 		} else if (Gdx.input.isKeyPressed(Keys.DPAD_LEFT)) {
-			System.out.println("left");
 			if (!touch0) {
 				moveLeft();
 			}
 			touch0 = true;
 		} else if (Gdx.input.isKeyPressed(Keys.DPAD_RIGHT)) {
-			System.out.println("right");
 			if (!touch0) {
 				moveRight();
 			}
 			touch0 = true;
 		} else if (Gdx.input.isKeyPressed(Keys.DPAD_DOWN)) {
-			System.out.println("down");
 			if (!touch0) {
 				moveDown();
 			}
